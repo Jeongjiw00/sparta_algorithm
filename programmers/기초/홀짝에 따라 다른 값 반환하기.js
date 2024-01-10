@@ -17,3 +17,9 @@ function solution(n) {
 
   return answer;
 }
+
+// 반복문 사용 X
+function solution2(n) {
+  if (n % 2 === 1) return ((n + 1) / 2) * ((n + 1) / 2); // 등차수열 합 공식
+  else return (n * (n + 1) * (n + 2)) / 6; // 등차수열 제곱 합 공식
+}
