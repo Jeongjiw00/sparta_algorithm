@@ -23,3 +23,25 @@ function solution(n, t, m, p) {
 
   return answer;
 }
+
+function solution2(n, t, m, p) {
+  let answer = [];
+  let num = 0;
+  let checkNum;
+  let count = 0;
+  let order = 1;
+  while (true) {
+    if (count === t) return answer.join("").toUpperCase();
+    checkNum = num.toString(n).split("");
+    for (let i = 0; i < checkNum.length; i++) {
+      if (p === m) p = 0;
+      else if (order % m === p) {
+        answer.push(checkNum[i]);
+        count++;
+        if (count === t) break;
+      }
+      order++;
+    }
+    num++;
+  }
+}
