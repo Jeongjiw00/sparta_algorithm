@@ -16,3 +16,24 @@ function solution(operations) {
 
   return heap.length ? [Math.max(...heap), Math.min(...heap)] : [0, 0];
 }
+
+//
+function solution2(operations) {
+  let answer = [];
+  let arr = [];
+  for (let i = 0; i < operations.length; i++) {
+    operation = operations[i].split(" ");
+
+    if (operation[0] === "I") {
+      arr.push(parseInt(operation[1]));
+    } else if (operation[1] == "1") {
+      arr.pop();
+    } else if (operation[1] == "-1") {
+      arr.shift();
+    }
+    arr.sort((a, b) => a - b);
+  }
+  if (arr.length === 0) answer = [0, 0];
+  else answer = [arr.pop(), arr.shift()];
+  return answer;
+}
