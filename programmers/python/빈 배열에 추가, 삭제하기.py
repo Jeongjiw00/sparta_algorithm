@@ -7,3 +7,22 @@ def solution(arr, flag):
         else:
             X = X[:-arr[i]]
     return X
+
+
+def solution(arr, flag):
+    answer = []
+    for a, f in zip(arr,flag):
+        if f == False:
+            answer = answer[:-a]
+        else:
+            answer += [a] * a*2
+    return answer
+
+def solution(arr, flag):
+    answer = []
+    for i, f in enumerate(flag):
+        if f:
+            answer += [arr[i]]*(arr[i]*2)
+        else:
+            answer = answer[:-arr[i]]
+    return answer
